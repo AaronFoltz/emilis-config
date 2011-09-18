@@ -3,12 +3,17 @@
 fill="--- "
 
 reset_style='\[\033[00m\]'
-status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter color
+status_style=$reset_style'\[\033[1;37m\]' # Bold White divider
 prompt_style=$reset_style
 command_style=$reset_style'\[\033[1;29m\]' # bold black
 # Prompt variable:
 
 PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h:\w\$'"$command_style "
+
+#\u Username
+#\h Time
+#\w PWD
+# In Mac OS X, only the time seems to be working
 
 # Reset color for command output
 # (this one is invoked every time before a command is executed):
